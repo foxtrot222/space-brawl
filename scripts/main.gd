@@ -4,11 +4,18 @@ const PLAYER_SCENE = preload("res://scenes/player.tscn")
 const HUD_SCENE = preload("res://scenes/hud.tscn")
 
 var players : Array[Color] = Global.players
-var ppos : Array[Vector2] = [Vector2(256.0, 256.0), Vector2(768.0, 768.0), Vector2(768.0, 256.0), Vector2(256.0, 768.0)]
-var hpos : Array[Vector2] = [Vector2(0.0, 0.0), Vector2(864.0, 928.0), Vector2(864.0, 0.0), Vector2(0.0, 928.0)]
+var ppos : Array[Vector2] = []
+var hpos : Array[Vector2] = []
+const HUD_SIZE := Vector2(160.0, 96.0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var view := get_viewport_rect().size
+	var quad := view * 0.25
+	var third_quad := view * 0.75
+	ppos = [quad,third_quad,Vector2(third_quad.x, quad.y),Vector2(quad.x, third_quad.y)]
+	hpos = [Vector2.ZERO,view - HUD_SIZE,Vector2(view.x - HUD_SIZE.x, 0.0),Vector2(0.0, view.y - HUD_SIZE.y)]
+	
 	for i in range(Global.players.size()):
 		var player_prefix: String = str(i)
 		var player_color: Color = Global.players[i]
@@ -22,10 +29,7 @@ func _ready() -> void:
 		hud.global_position = hpos[i]
 		get_tree().current_scene.add_child(new_player)
 		get_tree().current_scene.add_child(hud)
-	
-	for i in get_children():
-		if i.name.begins_with("HUD"):
-			i.initialize(get_node("Player" + str(i.name)[3]))
+		hud.initialize(new_player)
 	Spawner.player_respawned.connect(_on_player_respawned)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
