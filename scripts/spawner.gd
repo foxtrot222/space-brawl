@@ -32,12 +32,12 @@ func respawn_ship(ship: RigidBody2D) -> void:
 	
 	ship_respawned.emit(new_ship)
 
-func spawn_bullet(start_position: Vector2, start_direction: Vector2, color : Color) -> void:
+func spawn_bullet(start_position: Vector2, start_direction: Vector2, shooter : Player) -> void:
 	var bullet := BULLET_SCENE.instantiate()
-	bullet.setup(start_position, start_direction, color)
+	bullet.setup(start_position, start_direction, shooter)
 	get_tree().current_scene.add_child(bullet)
 
-func spawn_missile(target : RigidBody2D, start_position: Vector2, start_direction: Vector2, color : Color) -> void:
+func spawn_missile(target : RigidBody2D, start_position: Vector2, start_direction: Vector2, shooter : Player) -> void:
 	var missile := MISSILE_SCENE.instantiate()
-	missile.setup(target, start_position, start_direction, color)
+	missile.setup(target, start_position, start_direction, shooter)
 	get_tree().current_scene.add_child(missile)

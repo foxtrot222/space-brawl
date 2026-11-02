@@ -21,6 +21,7 @@ var laser_target: Vector2
 var damage_timer: float = 0.0
 var laser_cooldown := MAX_LASER_TIME
 var laser_overheated := false
+var shooter : Player
 
 func _ready() -> void:
 	set_is_casting(is_casting)
@@ -59,7 +60,7 @@ func _physics_process(delta: float) -> void:
 		damage_timer += delta
 		if damage_timer >= DAMAGE_TIME:
 			if collider and collider.has_method("take_damage"):
-				collider.take_damage(LASER_DAMAGE)
+				collider.take_damage(LASER_DAMAGE, shooter)
 			damage_timer = 0.0
 
 		if collider:

@@ -9,16 +9,17 @@ const MISSILE_DAMAGE := 50 # TODO : LOWER THIS
 const STEER_FORCE := 10000.0
 
 var velocity: Vector2
-var shooter: RigidBody2D
+var shooter: Player
 var color : Color
 var target : RigidBody2D = null
 var acceleration := Vector2.ZERO
 
-func setup(t : RigidBody2D, start_position: Vector2, start_direction: Vector2, col : Color) -> void:
+func setup(t : RigidBody2D, start_position: Vector2, start_direction: Vector2, player : Player) -> void:
 	global_position = start_position
 	velocity = start_direction.normalized() * MISSILE_SPEED
 	rotation = start_direction.angle()
-	color = col
+	shooter = player
+	color = shooter.color
 	$TailLine2D.default_color = color
 	target = t	
 
@@ -54,9 +55,9 @@ func _on_area_entered(area: Area2D) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is RigidBody2D:
-		if body.player.color == color:
+		if body.player == shooter:
 			return
-		body.take_damage(MISSILE_DAMAGE)
+		body.take_damage(MISSILE_DAMAGE, shooter)
 		var pos = position
 		if $ShapeCast2D.get_collision_count():
 			pos = $ShapeCast2D.get_collision_point(0)

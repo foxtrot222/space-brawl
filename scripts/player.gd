@@ -8,6 +8,7 @@ class_name Player
 var color : Color
 var prefix : String
 
+var kills := 0
 var deaths := 0
 var avg_life := 0.0
 var max_life := 0.0

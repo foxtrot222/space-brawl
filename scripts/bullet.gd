@@ -8,14 +8,15 @@ const BULLET_SPEED := 1500.0
 const BULLET_DAMAGE := 5
 
 var velocity: Vector2
-var shooter: RigidBody2D
+var shooter: Player
 var color : Color
 
-func setup(start_position: Vector2, start_direction: Vector2, col : Color) -> void:
+func setup(start_position: Vector2, start_direction: Vector2, player : Player) -> void:
 	global_position = start_position
 	velocity = start_direction.normalized() * BULLET_SPEED
 	rotation = start_direction.angle()
-	color = col
+	shooter = player
+	color = shooter.color
 	$Line2D.default_color = color
 
 func _physics_process(delta: float) -> void:
@@ -24,10 +25,9 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is RigidBody2D:
-		if body.player.color == color:
+		if body.player == shooter:
 			return
-		var damage := BULLET_DAMAGE
-		body.take_damage(damage)
+		body.take_damage(BULLET_DAMAGE, shooter)
 		var pos = position
 		if $ShapeCast2D.get_collision_count():
 			pos = $ShapeCast2D.get_collision_point(0)

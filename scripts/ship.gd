@@ -48,6 +48,7 @@ func _ready() -> void:
 	thrusters[0].default_color = player.color
 	thrusters[1].default_color = player.color
 	laser.line_2d.default_color = player.color
+	laser.shooter = player
 	
 	if birth:
 		$GhostTimer.timeout.emit()
@@ -63,7 +64,7 @@ func _ready() -> void:
 	
 
 func _physics_process(delta: float) -> void:
-	print(player.deaths)
+	lifetime += delta
 	missile_fire_cooldown = max(missile_fire_cooldown - delta, 0.0)
 	
 	if Input.is_action_just_pressed("bullet" + player.prefix):
@@ -163,11 +164,13 @@ func quantum_jump(state : PhysicsDirectBodyState2D) -> void:
 	if Global.ENABLE_ANGULAR_INERTIA:
 		state.angular_velocity *= VELOCITY_RETENTION
 
-func take_damage(amount: int) -> void:
+func take_damage(amount: int, shooter: Player = null) -> void:
 	if is_eliminated:
 		return
 	health = max(health - amount, 0)
 	if health <= 0:
+		if shooter:
+			shooter.kills += 1
 		die()
 
 func die() -> void:
@@ -181,7 +184,7 @@ func fire_bullet() -> void:
 	Spawner.spawn_bullet(
 		$FirePosition.global_position,
 		Vector2.UP.rotated(rotation),
-		player.color)
+		player)
 
 func try_fire_missile() -> void:
 	if missile_slots <= 0 or missile_fire_cooldown > 0.0:
@@ -193,7 +196,7 @@ func try_fire_missile() -> void:
 		target,
 		$FirePosition.global_position,
 		Vector2.UP.rotated(rotation),
-		player.color)
+		player)
 	get_tree().create_timer(MISSILE_SLOT_RECOVERY_SECONDS).timeout.connect(_recover_missile_slot)
 
 func _recover_missile_slot() -> void:
