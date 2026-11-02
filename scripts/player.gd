@@ -93,10 +93,7 @@ func _physics_process(delta: float) -> void:
 		
 	if $Target.is_colliding():
 		var collider = $Target.get_collider()
-		var prev = collider
 		if collider is RigidBody2D:
-			if not prev == target:
-				SoundManager.targeted()
 			target = collider
 		else:
 			target = null
@@ -118,14 +115,11 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		thrust_direction = -forward
 	if thrust_direction != Vector2.ZERO:
 		if state.linear_velocity.length() < MAX_SPEED:
-			SoundManager.thrust(int(player_prefix), 0)
 			thruster_animation(true, state.step)
 		else:
-			SoundManager.thrust(int(player_prefix),1)
 			thruster_animation(false, state.step)
 		state.apply_central_force(thrust_direction * THRUST)
 	else:
-		SoundManager.thrust(int(player_prefix),1)
 		thruster_animation(false, state.step)
 	if state.linear_velocity.length() > MAX_SPEED:
 		state.linear_velocity = state.linear_velocity.normalized() * MAX_SPEED
@@ -212,8 +206,6 @@ func _on_ghost_timer_timeout() -> void:
 	ghost = false
 
 func _on_qj_cool_down_timeout() -> void:
-	if not qj_cooldown:
-		SoundManager.qj_unlocked()
 	qj_cooldown=true
 
 func thruster_animation(thrust : bool, delta : float) -> void:

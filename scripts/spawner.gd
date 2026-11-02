@@ -17,7 +17,6 @@ func respawn_player(player: RigidBody2D) -> void:
 	var player_color: Color = player.color
 	var hud : Control = player.hud
 	Global.explosion.boom(player.position, player_color, "ShipExplode")
-	SoundManager.thrust(int(player_prefix), -1)
 	player.queue_free()
 
 	await get_tree().create_timer(2.0).timeout
