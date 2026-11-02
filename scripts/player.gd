@@ -40,7 +40,7 @@ enum Weapon { BULLET, MISSILE, LASER }
 var equipped_weapon: Weapon = Weapon.BULLET
 
 func _ready() -> void:
-	max_contacts_reported = Global.PLAYERS
+	max_contacts_reported = Global.PLAYERS + 1
 	screen_size = get_viewport_rect().size
 	
 	$Indicator.default_color = color
