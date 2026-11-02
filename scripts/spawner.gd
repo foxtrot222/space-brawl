@@ -4,35 +4,33 @@
 
 extends Node
 
-signal player_respawned(player: RigidBody2D)
+signal ship_respawned(ship: RigidBody2D)
 
-const PLAYER_SCENE = preload("res://scenes/player.tscn")
+const SHIP_SCENE = preload("res://scenes/ship.tscn")
 const BULLET_SCENE = preload("res://scenes/bullet.tscn")
 const MISSILE_SCENE = preload("res://scenes/missile.tscn")
 
-func respawn_player(player: RigidBody2D) -> void:
-	if player == null:
+func respawn_ship(ship: RigidBody2D) -> void:
+	if ship == null:
 		return
-	var player_prefix: String = player.player_prefix
-	var player_color: Color = player.color
-	var hud : Control = player.hud
-	Global.explosion.boom(player.position, player_color, "ShipExplode")
-	player.queue_free()
+	var player: Player = ship.player
+	var hud : Control = ship.hud
+	Global.explosion.boom(ship.position, player.color, "ShipExplode")
+	ship.queue_free()
 
 	await get_tree().create_timer(2.0).timeout
 	
-	var new_player := PLAYER_SCENE.instantiate() as RigidBody2D
-	new_player.player_prefix = player_prefix
-	new_player.color = player_color
-	new_player.health = new_player.MAX_HEALTH
-	new_player.birth = false
-	new_player.ghost = true
-	new_player.hud = hud
-	new_player.position = Global.randcc(200.0)
-	new_player.rotation = randf_range(0.0, TAU)
-	get_tree().current_scene.add_child(new_player)
+	var new_ship := SHIP_SCENE.instantiate() as RigidBody2D
+	new_ship.player = player
+	new_ship.health = new_ship.MAX_HEALTH
+	new_ship.birth = false
+	new_ship.ghost = true
+	new_ship.hud = hud
+	new_ship.position = Global.randcc(200.0)
+	new_ship.rotation = randf_range(0.0, TAU)
+	get_tree().current_scene.add_child(new_ship)
 	
-	player_respawned.emit(new_player)
+	ship_respawned.emit(new_ship)
 
 func spawn_bullet(start_position: Vector2, start_direction: Vector2, color : Color) -> void:
 	var bullet := BULLET_SCENE.instantiate()

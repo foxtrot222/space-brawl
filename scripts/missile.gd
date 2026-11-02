@@ -54,10 +54,9 @@ func _on_area_entered(area: Area2D) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is RigidBody2D:
-		if body.color == color:
+		if body.player.color == color:
 			return
 		body.take_damage(MISSILE_DAMAGE)
-		print("Missile hit Player %s! Damage: %s" % [int(body.player_prefix), MISSILE_DAMAGE])
 		var pos = position
 		if $ShapeCast2D.get_collision_count():
 			pos = $ShapeCast2D.get_collision_point(0)

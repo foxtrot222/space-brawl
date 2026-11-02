@@ -24,10 +24,9 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is RigidBody2D:
-		if body.color == color:
+		if body.player.color == color:
 			return
 		var damage := BULLET_DAMAGE
-		print("Bullet hit Player %s! Damage: %s" % [int(body.player_prefix), damage])
 		body.take_damage(damage)
 		var pos = position
 		if $ShapeCast2D.get_collision_count():

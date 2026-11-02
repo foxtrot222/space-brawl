@@ -4,13 +4,14 @@
 
 extends Node
 
-const PLAYERS = 4
+const PLAYERS = 2
+const PLAYER_COLORS := [Color.RED, Color.GREEN, Color.PURPLE, Color.ORANGE]
 const ENABLE_ANGULAR_INERTIA = false
 
 var star: Node2D
 var explosion: Node2D
 
-var players : Array[Color]
+var players : Array[Player]
 
 func set_star(value: Node2D) -> void:
 	star = value
@@ -21,10 +22,11 @@ func set_explosion(value: Node2D) -> void:
 func _ready() -> void:
 	get_viewport().set_use_hdr_2d(true)
 	players.resize(PLAYERS)
-	players[0] = Color.RED
-	players[1] = Color.GREEN
-	players[2] = Color.PURPLE
-	players[3] = Color.ORANGE
+	for i in PLAYERS:
+		var player := Player.new()
+		player.prefix = str(i)
+		player.color = PLAYER_COLORS[i]
+		players[i] = player
 
 func randcc(size: float) -> Vector2:
 	var frame := get_viewport().get_visible_rect().size
