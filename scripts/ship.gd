@@ -22,6 +22,8 @@ const MAX_MISSILE_SLOTS := 4
 const MISSILE_FIRE_INTERVAL := 2.0
 const MISSILE_SLOT_RECOVERY_SECONDS := 7.5
 
+enum Weapon { BULLET, MISSILE, LASER }
+
 var player : Player
 var hud : Control
 var screen_size: Vector2
@@ -35,8 +37,8 @@ var missile_fire_cooldown := 0.0
 var touched := false
 var qj_risk_value = 4
 var target : RigidBody2D = null
-enum Weapon { BULLET, MISSILE, LASER }
 var equipped_weapon: Weapon = Weapon.BULLET
+var lifetime := 0.0
 
 func _ready() -> void:
 	max_contacts_reported = Global.PLAYERS + 1
@@ -61,6 +63,7 @@ func _ready() -> void:
 	
 
 func _physics_process(delta: float) -> void:
+	print(player.deaths)
 	missile_fire_cooldown = max(missile_fire_cooldown - delta, 0.0)
 	
 	if Input.is_action_just_pressed("bullet" + player.prefix):
@@ -171,6 +174,7 @@ func die() -> void:
 	if is_eliminated:
 		return
 	is_eliminated = true
+	player.died(lifetime)
 	Spawner.respawn_ship(self)
 	
 func fire_bullet() -> void:
