@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bgiqqgn01xi7a" path="res://assets/sfx/ghost.wav" id="3_aa63w"]
 [ext_resource type="AudioStream" uid="uid://dxohbll75mvxb" path="res://assets/sfx/fire_bullet.wav" id="4_5lwbd"]
 [ext_resource type="AudioStream" uid="uid://bke7s02ujxv3q" path="res://assets/sfx/ship_explode.wav" id="8_aa63w"]
+[ext_resource type="AudioStream" uid="uid://j38khki04gys" path="res://assets/others/8bit-spaceshooter.mp3" id="11_wwv6j"]
 
 [node name="SoundManager" type="Node" unique_id=989475336]
 script = ExtResource("1_gbdfy")
@@ -48,4 +49,8 @@ volume_db = -10.0
 
 [node name="ShipExplode" type="AudioStreamPlayer" parent="." unique_id=1759474328]
 stream = ExtResource("8_aa63w")
+volume_db = -10.0
+
+[node name="8BitSpaceshooter" type="AudioStreamPlayer" parent="." unique_id=200095708]
+stream = ExtResource("11_wwv6j")
 volume_db = -10.0

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dj0bmw4wgsgia"
-path="res://.godot/imported/SFPixelate-BoldOblique.ttf-e2361ddc0973ef81a13f658e41e35b22.fontdata"
+uid="uid://bcvk55lmsa31p"
+path="res://.godot/imported/PressStart2P-Regular.ttf-0c026a570e2ad141a32e9e4879966605.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/pixelated/SFPixelate-BoldOblique.ttf"
-dest_files=["res://.godot/imported/SFPixelate-BoldOblique.ttf-e2361ddc0973ef81a13f658e41e35b22.fontdata"]
+source_file="res://assets/others/PressStart2P-Regular.ttf"
+dest_files=["res://.godot/imported/PressStart2P-Regular.ttf-0c026a570e2ad141a32e9e4879966605.fontdata"]
 
 [params]
 

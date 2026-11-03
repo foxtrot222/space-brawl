@@ -27,3 +27,15 @@ path = [
 ]
 SPDX-FileCopyrightText = "2026 Tirth Kavathiya <tirthkavathiya@gmail.com>"
 SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+# Music
+[[annotations]]
+path = "assets/others/8bit-spaceshooter.mp3"
+SPDX-FileCopyrightText = "HydroGene <https://opengameart.org/content/8-bit-epic-space-shooter-music>"
+SPDX-License-Identifier = "CC0-1.0"
+
+# Fonts
+[[annotations]]
+path = "assets/others/PressStart2P-Regular.ttf"
+SPDX-FileCopyrightText = "2012, Cody "CodeMan38" Boisclair <cody@zone38.net>"
+SPDX-License-Identifier = "OFL-1.1"

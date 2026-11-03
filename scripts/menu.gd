@@ -1,10 +1,19 @@
+# SPDX-FileCopyrightText: 2026 Tirth Kavathiya <tirthkavathiya@gmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 extends Control
 
 @onready var nodes := [$P1, $P2, $P3, $P4]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	SoundManager.stop_music()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept"):
+		get_viewport().set_input_as_handled()
+		_on_play_pressed()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -36,4 +45,4 @@ func _on_play_pressed() -> void:
 		player.color = nodes[i].get_node("Color").color
 		player.name = nodes[i].get_node("Name").text
 		Global.players[i] = player
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	get_tree().change_scene_to_file("uid://ck244wsn1nj50")

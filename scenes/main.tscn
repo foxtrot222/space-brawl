@@ -6,8 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cao82m7f0s4gp" path="res://scenes/star.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cnj05l6072alu" path="res://scenes/explosions.tscn" id="5_tbgi4"]
 [ext_resource type="Script" uid="uid://bh8sgosejs42y" path="res://scripts/pause.gd" id="6_tefeu"]
-[ext_resource type="FontFile" uid="uid://dcoscosbhswsi" path="res://assets/fonts/pixelated/SFPixelate-Bold.ttf" id="7_85g3d"]
-[ext_resource type="FontFile" uid="uid://clu27gxr8ky5" path="res://assets/fonts/pixelated/SFPixelate.ttf" id="8_tipki"]
+[ext_resource type="FontFile" uid="uid://bcvk55lmsa31p" path="res://assets/others/PressStart2P-Regular.ttf" id="8_tipki"]
 
 [sub_resource type="Environment" id="Environment_ms4yx"]
 background_mode = 3
@@ -41,7 +40,6 @@ position = Vector2(512, 512)
 
 [node name="Pause" type="Control" parent="." unique_id=2127876653]
 process_mode = 3
-visible = false
 top_level = true
 layout_mode = 3
 anchors_preset = 0
@@ -76,8 +74,8 @@ offset_right = -8.192017
 offset_bottom = -63.488007
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_85g3d")
-theme_override_font_sizes/font_size = 56
+theme_override_fonts/font = ExtResource("8_tipki")
+theme_override_font_sizes/font_size = 39
 text = "Space Brawl"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -97,7 +95,7 @@ offset_right = 352.0
 offset_bottom = 320.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_tipki")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 17
 theme_override_styles/normal = SubResource("StyleBoxFlat_85g3d")
 text = "Menu"
 
@@ -107,7 +105,7 @@ offset_left = 64.0
 offset_top = 514.0
 offset_right = 960.0
 offset_bottom = 960.0
-theme_override_constants/h_separation = 100
+theme_override_constants/h_separation = 90
 theme_override_constants/v_separation = 20
 columns = 5
 

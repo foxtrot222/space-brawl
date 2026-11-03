@@ -21,3 +21,17 @@ func collision():
 	
 func boom(expsn : String):
 	get_node(expsn).play()
+
+func play_music() -> void:
+	$"8BitSpaceshooter".stream_paused = false
+	$"8BitSpaceshooter".play()
+
+func stop_music() -> void:
+	$"8BitSpaceshooter".stop()
+	$"8BitSpaceshooter".stream_paused = false
+
+func pause_music() -> void:
+	$"8BitSpaceshooter".stream_paused = true
+
+func resume_music() -> void:
+	$"8BitSpaceshooter".stream_paused = false

@@ -200,6 +200,8 @@ func try_fire_missile() -> void:
 	get_tree().create_timer(MISSILE_SLOT_RECOVERY_SECONDS).timeout.connect(_recover_missile_slot)
 
 func _recover_missile_slot() -> void:
+	if not is_instance_valid(self):
+		return
 	missile_slots = min(missile_slots + 1, MAX_MISSILE_SLOTS)
 
 func _on_ghost_timer_timeout() -> void:

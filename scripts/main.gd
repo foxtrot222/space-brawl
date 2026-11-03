@@ -1,7 +1,11 @@
+# SPDX-FileCopyrightText: 2026 Tirth Kavathiya <tirthkavathiya@gmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 extends Node2D
 
-const SHIP_SCENE = preload("res://scenes/ship.tscn")
-const HUD_SCENE = preload("res://scenes/hud.tscn")
+const SHIP_SCENE = preload("uid://citcq11bhhs0b")
+const HUD_SCENE = preload("uid://bxqmq7s5w4g2")
 const HUD_SIZE := Vector2(160.0, 96.0)
 
 var ppos : Array[Vector2] = []
@@ -9,6 +13,7 @@ var hpos : Array[Vector2] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SoundManager.play_music()
 	Spawner.ship_respawned.connect(_on_ship_respawned)
 	
 	var view := get_viewport_rect().size

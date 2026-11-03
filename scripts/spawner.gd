@@ -6,9 +6,9 @@ extends Node
 
 signal ship_respawned(ship: RigidBody2D)
 
-const SHIP_SCENE = preload("res://scenes/ship.tscn")
-const BULLET_SCENE = preload("res://scenes/bullet.tscn")
-const MISSILE_SCENE = preload("res://scenes/missile.tscn")
+const SHIP_SCENE = preload("uid://citcq11bhhs0b")
+const BULLET_SCENE = preload("uid://cin2ioskvfdc7")
+const MISSILE_SCENE = preload("uid://bypkrlqddq6yb")
 
 func respawn_ship(ship: RigidBody2D) -> void:
 	if ship == null:
