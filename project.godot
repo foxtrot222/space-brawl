@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Space Brawl"
-run/main_scene="uid://ck244wsn1nj50"
+run/main_scene="uid://dwynmy8jepaha"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://dfo1qocyuda2q"
 

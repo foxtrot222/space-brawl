@@ -1,9 +1,673 @@
 [gd_scene format=3 uid="uid://dwynmy8jepaha"]
 
-[node name="Control" type="Control" unique_id=796330393]
+[ext_resource type="Script" uid="uid://cdidt60cgvjqv" path="res://scripts/menu.gd" id="1_con2f"]
+[ext_resource type="FontFile" uid="uid://dcoscosbhswsi" path="res://assets/fonts/pixelated/SFPixelate-Bold.ttf" id="1_yqeox"]
+[ext_resource type="FontFile" uid="uid://clu27gxr8ky5" path="res://assets/fonts/pixelated/SFPixelate.ttf" id="2_vjb58"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_con2f"]
+bg_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+corner_detail = 1
+
+[node name="Menu" type="Control" unique_id=796330393]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_con2f")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=457821191]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="." unique_id=1739703212]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 192.0
+offset_right = 192.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_con2f")
+text = "Play"
+
+[node name="Button2" type="Button" parent="." unique_id=1149085911]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 192.0
+offset_right = 376.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_con2f")
+text = "Credits"
+
+[node name="Label" type="Label" parent="." unique_id=88306204]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.312
+anchor_right = 0.508
+anchor_bottom = 0.312
+offset_left = -456.19202
+offset_top = -255.488
+offset_right = -8.192017
+offset_bottom = -127.48801
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 56
+text = "Space Brawl"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=835411951]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.312
+anchor_right = 0.508
+anchor_bottom = 0.312
+offset_left = -440.19202
+offset_top = -23.488007
+offset_right = -328.19202
+offset_bottom = 8.511993
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 24
+text = "Players"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=194608728]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.312
+anchor_right = 0.508
+anchor_bottom = 0.312
+offset_left = -104.19202
+offset_top = -95.48801
+offset_right = 107.80798
+offset_bottom = -63.488007
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 24
+text = "Angular Inertia"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="." unique_id=1277318876]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.312
+anchor_right = 0.508
+anchor_bottom = 0.312
+offset_left = -104.19202
+offset_top = -23.488007
+offset_right = -3.1920166
+offset_bottom = 8.511993
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 24
+text = "Gravity"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="." unique_id=1274599430]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.312
+anchor_right = 0.508
+anchor_bottom = 0.312
+offset_left = 247.80798
+offset_top = -219.488
+offset_right = 439.80798
+offset_bottom = 640.51196
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 16
+text = "Actions:
+FT:Forward Thrust
+RT:Reverse Thrust
+LR:Left Rotate
+RR:Right Rotate
+QJ:Quantum Jump
+F:Fire
+B:Select Bullet
+M:Select Missile
+L:Select Laser
+
+Keyboard Controls:
+FT : W, I, Kp(5)
+LR : A, J, Kp(1)
+RT : S, K, Kp(2)
+RR : D, L, Kp(3)
+QJ : Q, U, Kp(4)
+F  : E, O, Kp(6)
+B  : 1, 7, Kp(7)
+M  : 2, 8, Kp(8)
+L  : 3, 9, Kp(9)
+
+Gamepad Controls:
+FT : RT
+RT : LT
+LR : L-Stick Left / R-Stick Left
+RR : L-Stick Right / R-Stick Right
+QJ : Y / Triangle, D-pad Up
+F  : X / Square
+B  : A / Cross, D-pad Left
+M  : D-pad Down
+L  : B / Circle, D-pad Right
+
+Other Controls:
+ENTER/START to play or go to menu
+Esc/SELECT to pause and view stats"
+autowrap_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=1235035198]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 296.0
+offset_right = 376.0
+offset_bottom = 328.0
+theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_font_sizes/font_size = 20
+selected = 0
+item_count = 3
+popup/item_0/text = "2"
+popup/item_0/id = 2
+popup/item_1/text = "3"
+popup/item_1/id = 3
+popup/item_2/text = "4"
+popup/item_2/id = 4
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=751345145]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 296.0
+offset_right = 696.0
+offset_bottom = 328.0
+theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_font_sizes/font_size = 20
+text = "500000.0"
+placeholder_text = "Alice"
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="CheckButton" type="CheckButton" parent="." unique_id=428414327]
+layout_mode = 0
+offset_left = 648.0
+offset_top = 224.0
+offset_right = 692.0
+offset_bottom = 256.0
+
+[node name="P1" type="Control" parent="." unique_id=1434533221]
+anchors_preset = 0
+offset_left = 80.0
+offset_top = 368.0
+offset_right = 376.0
+offset_bottom = 560.0
+
+[node name="ColorRect" type="ColorRect" parent="P1" unique_id=703215848]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+
+[node name="Label3" type="Label" parent="P1" unique_id=426891435]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.312
+anchor_right = 0.508
+anchor_bottom = 0.312
+offset_left = -134.36801
+offset_top = -43.904
+offset_right = -62.36801
+offset_bottom = -19.904
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 24
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="P1" unique_id=1922863849]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.312
+anchor_right = 0.508
+anchor_bottom = 0.312
+offset_left = -134.36801
+offset_top = 20.096
+offset_right = -62.36801
+offset_bottom = 44.096
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 24
+text = "Color"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="P1" unique_id=52187444]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.312
+anchor_right = 0.508
+anchor_bottom = 0.312
+offset_left = -134.36801
+offset_top = 84.096
+offset_right = -16.368011
+offset_bottom = 108.096
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 24
+text = "Controls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="P1" unique_id=1745727333]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 144.0
+offset_right = 286.0
+offset_bottom = 176.0
+theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_font_sizes/font_size = 20
+selected = 0
+item_count = 4
+popup/item_0/text = "WASD"
+popup/item_0/id = 1
+popup/item_1/text = "IJKL"
+popup/item_1/id = 2
+popup/item_2/text = "Keypad"
+popup/item_2/id = 3
+popup/item_3/text = "Gamepad"
+popup/item_3/id = 4
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="P1" unique_id=725244108]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 80.0
+offset_right = 286.0
+offset_bottom = 112.0
+color = Color(1, 0, 0, 1)
+edit_alpha = false
+edit_intensity = false
+
+[node name="TextEdit" type="TextEdit" parent="P1" unique_id=1073322053]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 16.0
+offset_right = 280.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_font_sizes/font_size = 20
+placeholder_text = "Foxtrot"
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="P2" type="Control" parent="." unique_id=1234970364]
+anchors_preset = 0
+offset_left = 416.0
+offset_top = 368.0
+offset_right = 712.0
+offset_bottom = 560.0
+
+[node name="ColorRect" type="ColorRect" parent="P2" unique_id=817514967]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+
+[node name="Label3" type="Label" parent="P2" unique_id=1222584815]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.312
+anchor_right = 0.508
+anchor_bottom = 0.312
+offset_left = -134.36801
+offset_top = -43.904
+offset_right = -62.36801
+offset_bottom = -19.904
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 24
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="P2" unique_id=917161418]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.312
+anchor_right = 0.508
+anchor_bottom = 0.312
+offset_left = -134.36801
+offset_top = 20.096
+offset_right = -62.36801
+offset_bottom = 44.096
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 24
+text = "Color"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="P2" unique_id=1161217220]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.312
+anchor_right = 0.508
+anchor_bottom = 0.312
+offset_left = -134.36801
+offset_top = 84.096
+offset_right = -16.368011
+offset_bottom = 108.096
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 24
+text = "Controls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="P2" unique_id=1336222204]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 144.0
+offset_right = 286.0
+offset_bottom = 176.0
+theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_font_sizes/font_size = 20
+selected = 1
+item_count = 4
+popup/item_0/text = "WSAD"
+popup/item_0/id = 1
+popup/item_1/text = "IJKL"
+popup/item_1/id = 2
+popup/item_2/text = "Keypad"
+popup/item_2/id = 3
+popup/item_3/text = "Gamepad"
+popup/item_3/id = 4
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="P2" unique_id=1990835434]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 80.0
+offset_right = 286.0
+offset_bottom = 112.0
+color = Color(0, 1, 0, 1)
+edit_alpha = false
+edit_intensity = false
+
+[node name="TextEdit" type="TextEdit" parent="P2" unique_id=1551166129]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 16.0
+offset_right = 280.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_font_sizes/font_size = 20
+placeholder_text = "Alice"
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="P3" type="Control" parent="." unique_id=1278642795]
+anchors_preset = 0
+offset_left = 80.0
+offset_top = 600.0
+offset_right = 376.0
+offset_bottom = 792.0
+
+[node name="ColorRect" type="ColorRect" parent="P3" unique_id=1757183615]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+
+[node name="Label3" type="Label" parent="P3" unique_id=1292553080]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.312
+anchor_right = 0.508
+anchor_bottom = 0.312
+offset_left = -134.36801
+offset_top = -43.904
+offset_right = -62.36801
+offset_bottom = -19.904
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 24
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="P3" unique_id=1251357393]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.312
+anchor_right = 0.508
+anchor_bottom = 0.312
+offset_left = -134.36801
+offset_top = 20.096
+offset_right = -62.36801
+offset_bottom = 44.096
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 24
+text = "Color"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="P3" unique_id=1747947484]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.312
+anchor_right = 0.508
+anchor_bottom = 0.312
+offset_left = -134.36801
+offset_top = 84.096
+offset_right = -16.368011
+offset_bottom = 108.096
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 24
+text = "Controls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="P3" unique_id=567550155]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 144.0
+offset_right = 286.0
+offset_bottom = 176.0
+theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_font_sizes/font_size = 20
+selected = 2
+item_count = 4
+popup/item_0/text = "WSAD"
+popup/item_0/id = 1
+popup/item_1/text = "IJKL"
+popup/item_1/id = 2
+popup/item_2/text = "Keypad"
+popup/item_2/id = 3
+popup/item_3/text = "Gamepad"
+popup/item_3/id = 4
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="P3" unique_id=819388813]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 80.0
+offset_right = 286.0
+offset_bottom = 112.0
+color = Color(0, 0, 1, 1)
+edit_alpha = false
+edit_intensity = false
+
+[node name="TextEdit" type="TextEdit" parent="P3" unique_id=618064129]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 16.0
+offset_right = 280.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_font_sizes/font_size = 20
+placeholder_text = "Bob"
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="P4" type="Control" parent="." unique_id=36712876]
+anchors_preset = 0
+offset_left = 416.0
+offset_top = 600.0
+offset_right = 712.0
+offset_bottom = 792.0
+
+[node name="ColorRect" type="ColorRect" parent="P4" unique_id=1625983807]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+
+[node name="Label3" type="Label" parent="P4" unique_id=2064022644]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.312
+anchor_right = 0.508
+anchor_bottom = 0.312
+offset_left = -134.36801
+offset_top = -43.904
+offset_right = -62.36801
+offset_bottom = -19.904
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 24
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="P4" unique_id=2023531695]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.312
+anchor_right = 0.508
+anchor_bottom = 0.312
+offset_left = -134.36801
+offset_top = 20.096
+offset_right = -62.36801
+offset_bottom = 44.096
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 24
+text = "Color"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="P4" unique_id=535974019]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.312
+anchor_right = 0.508
+anchor_bottom = 0.312
+offset_left = -134.36801
+offset_top = 84.096
+offset_right = -16.368011
+offset_bottom = 108.096
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yqeox")
+theme_override_font_sizes/font_size = 24
+text = "Controls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="P4" unique_id=1608282924]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 144.0
+offset_right = 286.0
+offset_bottom = 176.0
+theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_font_sizes/font_size = 20
+selected = 3
+item_count = 4
+popup/item_0/text = "WSAD"
+popup/item_0/id = 1
+popup/item_1/text = "IJKL"
+popup/item_1/id = 2
+popup/item_2/text = "Keypad"
+popup/item_2/id = 3
+popup/item_3/text = "Gamepad"
+popup/item_3/id = 4
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="P4" unique_id=81625523]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 80.0
+offset_right = 286.0
+offset_bottom = 112.0
+color = Color(1, 1, 1, 1)
+edit_alpha = false
+edit_intensity = false
+
+[node name="TextEdit" type="TextEdit" parent="P4" unique_id=27593088]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 16.0
+offset_right = 280.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_font_sizes/font_size = 20
+placeholder_text = "Steve"
+context_menu_enabled = false
+emoji_menu_enabled = false
