@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://boajpa4nflpkn"
-path="res://.godot/imported/Courneuf-Outline.ttf-720729e6504bd214eab985b091fe4fbf.fontdata"
+uid="uid://dj0bmw4wgsgia"
+path="res://.godot/imported/SFPixelate-BoldOblique.ttf-e2361ddc0973ef81a13f658e41e35b22.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/courneuf-family/Courneuf-Outline.ttf"
-dest_files=["res://.godot/imported/Courneuf-Outline.ttf-720729e6504bd214eab985b091fe4fbf.fontdata"]
+source_file="res://assets/fonts/pixelated/SFPixelate-BoldOblique.ttf"
+dest_files=["res://.godot/imported/SFPixelate-BoldOblique.ttf-e2361ddc0973ef81a13f658e41e35b22.fontdata"]
 
 [params]
 

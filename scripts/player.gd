@@ -7,6 +7,7 @@ class_name Player
 
 var color : Color
 var prefix : String
+var name : String = "foxtrot"
 
 var kills := 0
 var deaths := 0

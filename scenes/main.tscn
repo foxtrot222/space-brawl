@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cao82m7f0s4gp" path="res://scenes/star.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cnj05l6072alu" path="res://scenes/explosions.tscn" id="5_tbgi4"]
 [ext_resource type="Script" uid="uid://bh8sgosejs42y" path="res://scripts/pause.gd" id="6_tefeu"]
-[ext_resource type="FontFile" uid="uid://dooc67m3wwk34" path="res://assets/fonts/courneuf-family/Courneuf-Regular.ttf" id="7_o6xl0"]
+[ext_resource type="FontFile" uid="uid://dcoscosbhswsi" path="res://assets/fonts/pixelated/SFPixelate-Bold.ttf" id="7_85g3d"]
+[ext_resource type="FontFile" uid="uid://clu27gxr8ky5" path="res://assets/fonts/pixelated/SFPixelate.ttf" id="8_tipki"]
 
 [sub_resource type="Environment" id="Environment_ms4yx"]
 background_mode = 3
@@ -17,6 +18,10 @@ glow_hdr_threshold = 2.0
 shader = ExtResource("1_tefeu")
 shader_parameter/twink_factor = 5.0
 shader_parameter/twink_cood = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85g3d"]
+bg_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+corner_detail = 1
 
 [node name="Main" type="Node2D" unique_id=170585860]
 script = ExtResource("1_o6xl0")
@@ -36,6 +41,7 @@ position = Vector2(512, 512)
 
 [node name="Pause" type="Control" parent="." unique_id=2127876653]
 process_mode = 3
+visible = false
 top_level = true
 layout_mode = 3
 anchors_preset = 0
@@ -47,7 +53,15 @@ script = ExtResource("6_tefeu")
 layout_mode = 0
 offset_right = 1024.0
 offset_bottom = 1024.0
-color = Color(0, 0, 0, 0.70000005)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Pause" unique_id=2084278526]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 56.0
+offset_right = 968.0
+offset_bottom = 456.0
+color = Color(0.14906609, 0.14906627, 0.14906606, 1)
 
 [node name="Label" type="Label" parent="Pause" unique_id=1251290474]
 layout_mode = 1
@@ -56,15 +70,45 @@ anchor_left = 0.508
 anchor_top = 0.312
 anchor_right = 0.508
 anchor_bottom = 0.312
-offset_left = -200.19202
-offset_top = 0.5119934
-offset_right = 183.80798
-offset_bottom = 64.51199
+offset_left = -456.19202
+offset_top = -191.488
+offset_right = -8.192017
+offset_bottom = -63.488007
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1.353, 0.155, 0, 1)
-theme_override_fonts/font = ExtResource("7_o6xl0")
+theme_override_fonts/font = ExtResource("7_85g3d")
 theme_override_font_sizes/font_size = 56
 text = "Space Brawl"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Pause" unique_id=1078564241]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 64.0
+offset_right = 960.0
+offset_bottom = 448.0
+
+[node name="Button" type="Button" parent="Pause" unique_id=1131940182]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 256.0
+offset_right = 352.0
+offset_bottom = 320.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_tipki")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_85g3d")
+text = "Menu"
+
+[node name="GridContainer" type="GridContainer" parent="Pause" unique_id=1279107659]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 514.0
+offset_right = 960.0
+offset_bottom = 960.0
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 20
+columns = 5
+
+[connection signal="pressed" from="Pause/Button" to="Pause" method="_on_button_pressed"]

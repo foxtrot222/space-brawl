@@ -4,7 +4,7 @@
 
 extends Node
 
-const PLAYERS = 2
+const PLAYERS = 4
 const PLAYER_COLORS := [Color.RED, Color.GREEN, Color.PURPLE, Color.ORANGE]
 const ENABLE_ANGULAR_INERTIA = false
 

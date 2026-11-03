@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dooc67m3wwk34"
-path="res://.godot/imported/Courneuf-Regular.ttf-07255086312704903f4e12c417412653.fontdata"
+uid="uid://druijc27x04gj"
+path="res://.godot/imported/SFPixelateShaded.ttf-9a63525cc39810e0aafed19e672e0690.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/courneuf-family/Courneuf-Regular.ttf"
-dest_files=["res://.godot/imported/Courneuf-Regular.ttf-07255086312704903f4e12c417412653.fontdata"]
+source_file="res://assets/fonts/pixelated/SFPixelateShaded.ttf"
+dest_files=["res://.godot/imported/SFPixelateShaded.ttf-9a63525cc39810e0aafed19e672e0690.fontdata"]
 
 [params]
 
