@@ -1,10 +1,10 @@
 extends Control
 
+@onready var nodes := [$P1, $P2, $P3, $P4]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -17,4 +17,23 @@ func _process(delta: float) -> void:
 	else:
 		$P3.visible = false
 		$P4.visible = false
-		
+	Global.PLAYERS = $OptionButton.get_selected_id()
+	Global.GRAVITY_STRENGTH = float($TextEdit.text)
+	Global.ENABLE_ANGULAR_INERTIA = $CheckButton.button_pressed
+	
+	$Warning.visible = false
+	for i in range(Global.PLAYERS):
+		for j in range(i + 1, Global.PLAYERS):
+			if nodes[i].get_node("Controls").get_selected_id() == nodes[j].get_node("Controls").get_selected_id() || nodes[i].get_node("Color").color == nodes[j].get_node("Color").color:
+				$Warning.add_theme_color_override("font_color", nodes[i].get_node("Color").color)
+				$Warning.visible = true
+	
+func _on_play_pressed() -> void:
+	Global.players.resize(Global.PLAYERS)
+	for i in Global.PLAYERS:
+		var player := Player.new()
+		player.prefix = str(nodes[i].get_node("Controls").get_selected_id())
+		player.color = nodes[i].get_node("Color").color
+		player.name = nodes[i].get_node("Name").text
+		Global.players[i] = player
+	get_tree().change_scene_to_file("res://scenes/main.tscn")

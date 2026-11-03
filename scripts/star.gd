@@ -4,10 +4,11 @@
 
 extends Node2D
 
-const GRAVITY_STRENGTH: float = 500000.0
+var GRAVITY_STRENGTH := 500000.0
 const ROTATE_FACTOR := 5
 
 func _ready() -> void:
+	GRAVITY_STRENGTH = Global.GRAVITY_STRENGTH
 	Global.set_star(self)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
