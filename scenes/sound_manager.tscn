@@ -17,40 +17,51 @@ script = ExtResource("1_gbdfy")
 
 [node name="Collision" type="AudioStreamPlayer" parent="." unique_id=238643535]
 stream = ExtResource("2_74mgu")
+volume_db = -5.0
 pitch_scale = 0.5
+bus = &"SFX"
 
 [node name="QJ" type="AudioStreamPlayer" parent="." unique_id=1631131316]
 stream = ExtResource("2_s6peo")
 volume_db = -5.0
+bus = &"SFX"
 
 [node name="Ghost" type="AudioStreamPlayer" parent="." unique_id=77242500]
 stream = ExtResource("3_aa63w")
 volume_db = -5.0
+bus = &"SFX"
 
 [node name="FireBullet" type="AudioStreamPlayer" parent="." unique_id=1105190352]
 stream = ExtResource("4_5lwbd")
 volume_db = -5.0
+bus = &"SFX"
 
 [node name="FireMissile" type="AudioStreamPlayer" parent="." unique_id=1441313275]
 stream = ExtResource("2_shlr6")
 volume_db = -5.0
+bus = &"SFX"
 
 [node name="MissileExplode" type="AudioStreamPlayer" parent="." unique_id=199028270]
 stream = ExtResource("2_ro3ww")
-volume_db = -10.0
+volume_db = -5.0
+bus = &"SFX"
 
 [node name="BulletExplode" type="AudioStreamPlayer" parent="." unique_id=1041881767]
 stream = ExtResource("2_v1pt3")
-volume_db = -10.0
+volume_db = -5.0
+bus = &"SFX"
 
 [node name="LaserExplode" type="AudioStreamPlayer" parent="." unique_id=1813803469]
 stream = ExtResource("2_mpi5b")
-volume_db = -10.0
+volume_db = -5.0
+bus = &"SFX"
 
 [node name="ShipExplode" type="AudioStreamPlayer" parent="." unique_id=1759474328]
 stream = ExtResource("8_aa63w")
-volume_db = -10.0
+volume_db = -5.0
+bus = &"SFX"
 
 [node name="8BitSpaceshooter" type="AudioStreamPlayer" parent="." unique_id=200095708]
 stream = ExtResource("11_wwv6j")
-volume_db = -10.0
+volume_db = -30.0
+bus = &"Music"

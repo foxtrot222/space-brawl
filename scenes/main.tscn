@@ -19,7 +19,7 @@ shader_parameter/twink_factor = 5.0
 shader_parameter/twink_cood = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85g3d"]
-bg_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+bg_color = Color(0.2745098, 0.2745098, 0.2745098, 1)
 corner_detail = 1
 
 [node name="Main" type="Node2D" unique_id=170585860]
@@ -60,7 +60,7 @@ offset_left = 568.0
 offset_top = 56.0
 offset_right = 968.0
 offset_bottom = 456.0
-color = Color(0.14906609, 0.14906627, 0.14906606, 1)
+color = Color(0.2745098, 0.2745098, 0.2745098, 1)
 
 [node name="Label" type="Label" parent="Pause" unique_id=1251290474]
 layout_mode = 1
