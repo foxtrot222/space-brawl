@@ -18,8 +18,15 @@ func respawn_ship(ship: RigidBody2D) -> void:
 	Global.explosion.boom(ship.position, player.color, "ShipExplode")
 	ship.queue_free()
 
-	await get_tree().create_timer(2.0).timeout
-	
+	var game_scene := get_tree().current_scene
+
+	await get_tree().create_timer(2.0, false).timeout
+
+	if not is_instance_valid(game_scene) or game_scene != get_tree().current_scene:
+		return
+	if not is_instance_valid(Global.star) or not is_instance_valid(hud):
+		return
+
 	var new_ship := SHIP_SCENE.instantiate() as RigidBody2D
 	new_ship.player = player
 	new_ship.health = new_ship.MAX_HEALTH
@@ -28,8 +35,8 @@ func respawn_ship(ship: RigidBody2D) -> void:
 	new_ship.hud = hud
 	new_ship.position = Global.randcc(200.0)
 	new_ship.rotation = randf_range(0.0, TAU)
-	get_tree().current_scene.add_child(new_ship)
-	
+	game_scene.add_child(new_ship)
+
 	ship_respawned.emit(new_ship)
 
 func spawn_bullet(start_position: Vector2, start_direction: Vector2, shooter : Player) -> void:

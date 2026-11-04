@@ -4,7 +4,7 @@
 
 extends Node
 
-var PLAYERS := 2
+var PLAYERS := 0
 var ENABLE_ANGULAR_INERTIA := false
 var GRAVITY_STRENGTH := 500000.0
 
