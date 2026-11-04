@@ -37,5 +37,5 @@ SPDX-License-Identifier = "CC0-1.0"
 # Fonts
 [[annotations]]
 path = "assets/others/PressStart2P-Regular.ttf"
-SPDX-FileCopyrightText = "2012, Cody "CodeMan38" Boisclair <cody@zone38.net>"
+SPDX-FileCopyrightText = '2012, Cody "CodeMan38" Boisclair <cody@zone38.net>'
 SPDX-License-Identifier = "OFL-1.1"

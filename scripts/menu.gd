@@ -4,6 +4,8 @@
 
 extends Control
 
+const CREDITS_SCENE := "uid://b5jc8io0au1d8"
+
 @onready var nodes := [$P1, $P2, $P3, $P4]
 
 # Called when the node enters the scene tree for the first time.
@@ -46,3 +48,7 @@ func _on_play_pressed() -> void:
 		player.name = nodes[i].get_node("Name").text
 		Global.players[i] = player
 	get_tree().change_scene_to_file("uid://ck244wsn1nj50")
+
+
+func _on_credits_pressed() -> void:
+	get_tree().change_scene_to_file(CREDITS_SCENE)

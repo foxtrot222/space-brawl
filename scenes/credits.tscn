@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://b5jc8io0au1d8"]
+
+[ext_resource type="Script" uid="uid://q137u0i265yr" path="res://scripts/credits.gd" id="1_credits"]
+[ext_resource type="FontFile" uid="uid://bcvk55lmsa31p" path="res://assets/others/PressStart2P-Regular.ttf" id="2_2ckv8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_black"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Credits" type="ScrollContainer" unique_id=1669800376]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_black")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("1_credits")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=386196211]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=1624708798]
+layout_mode = 2
+theme_override_constants/line_separation = 6
+theme_override_constants/paragraph_separation = 1
+theme_override_fonts/normal_font = ExtResource("2_2ckv8")
+theme_override_fonts/bold_font = ExtResource("2_2ckv8")
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 15
+bbcode_enabled = true
+text = "[center][b]Credits[/b]
+
+[b]Created By[/b]
+Tirth Kavathiya (foxtrot222)
+Kavya Bhatiya (PheonixKB)
+Rohan Macha (userg3709)
+
+[b]Tools Used[/b]
+Godot Engine
+Pixelorama
+Bfxr
+
+[b]Music[/b]
+\"8-bit Epic Space Shooter Music\" by HydroGene
+
+[b]Font[/b]
+Press Start 2P by Cody \"CodeMan38\" Boisclair
+
+[b]Godot Engine License[/b]
+This game uses Godot Engine, available under the MIT License.
+
+Copyright (c) 2014-present Godot Engine contributors.
+Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the \"Software\"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+[/center]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
