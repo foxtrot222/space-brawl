@@ -9,18 +9,19 @@ extends RigidBody2D
 
 const MAX_HEALTH := 100
 const WRAP_MARGIN := 48
-const THRUST := 100.0 # TODO : LOWER THIS
-const MAX_SPEED := 800.0 # TODO : LOWER THIS
+const THRUST := 125.0
+const MAX_SPEED := 400.0
 const THRUST_LENGTH := 48.0 # > 32.0
 const THRUST_FACTOR := 10.0
 const NO_THRUST_FACTOR := 20.0
-const ROTATION_SPEED := 100.0
+const ROTATION_SPEED := 150.0
+const ANGULAR_ROTATION := 50.0
 const ANGULAR_DAMP := PI
 const QUANTUM_JUMP_OFFSET := 100
 const VELOCITY_RETENTION := 0.5
 const MAX_MISSILE_SLOTS := 4
 const MISSILE_FIRE_INTERVAL := 2.0
-const MISSILE_SLOT_RECOVERY_SECONDS := 7.5
+const MISSILE_SLOT_RECOVERY_SECONDS := 10.0
 
 enum Weapon { BULLET, MISSILE, LASER }
 
@@ -128,9 +129,15 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		state.linear_velocity = state.linear_velocity.normalized() * MAX_SPEED
 		
 	if Input.is_action_pressed("rotate_left" + player.prefix):
-		state.apply_torque_impulse(-ROTATION_SPEED)
+		if Global.ENABLE_ANGULAR_INERTIA:
+			state.apply_torque_impulse(-ANGULAR_ROTATION)
+		else:
+			state.apply_torque_impulse(-ROTATION_SPEED)
 	if Input.is_action_pressed("rotate_right" + player.prefix):
-		state.apply_torque_impulse(ROTATION_SPEED)
+		if Global.ENABLE_ANGULAR_INERTIA:
+			state.apply_torque_impulse(ANGULAR_ROTATION)
+		else:
+			state.apply_torque_impulse(ROTATION_SPEED)
 
 	if Input.is_action_just_pressed("quantum_jump" + player.prefix ) and not ghost:
 		if qj_cooldown:

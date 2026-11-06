@@ -5,7 +5,7 @@
 extends Area2D
 
 const MISSILE_SPEED := 150.0
-const MISSILE_DAMAGE := 50 # TODO : LOWER THIS
+const MISSILE_DAMAGE := 25
 const STEER_FORCE := 10000.0
 
 var velocity: Vector2
